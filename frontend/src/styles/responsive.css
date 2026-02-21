@@ -1,0 +1,223 @@
+/* Enhanced Responsive styles for Todo App */
+
+/* Mobile-first approach */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .task-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .task-form {
+    padding: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .button-group > * {
+    width: 100%;
+  }
+
+  /* Adjust header for mobile */
+  .mobile-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  .mobile-header .welcome-text {
+    display: none;
+  }
+
+  .mobile-header .mobile-welcome {
+    display: block;
+  }
+
+  /* Better spacing on mobile */
+  .mobile-spaced {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Compact buttons for mobile */
+  .compact-button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Prevent horizontal scrolling */
+  .truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Adjust grid for mobile */
+  .mobile-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Mobile-friendly task status buttons */
+  .status-buttons-mobile {
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+  }
+
+  /* Mobile touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem !important;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .task-list-section {
+    padding: 1.5rem;
+  }
+
+  .tablet-responsive {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Common responsive utilities */
+.responsive-card {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-button {
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.responsive-input {
+  min-height: 2.5rem;
+  padding: 0.5rem;
+}
+
+/* Responsive typography */
+.responsive-h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.responsive-h2 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.responsive-h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+/* Touch-friendly elements */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem !important;
+}
+
+/* High contrast for accessibility */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    border: 2px solid #000 !important;
+  }
+
+  .task-item {
+    border: 2px solid;
+  }
+
+  .button {
+    border: 2px solid;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .no-animation {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .landscape-adjusted {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+/* Focus indicators for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Responsive typography scaling */
+.responsive-text {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Scroll container for wide content */
+.scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Better touch targets for mobile */
+.touch-area {
+  padding: 0.75rem;
+  margin: -0.75rem;
+}
+
+/* Improved mobile task list layout */
+@media (max-width: 640px) {
+  .task-status-chips {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+
+  .task-actions {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+  }
+
+  .task-action-button {
+    width: auto !important;
+    margin-bottom: 0.25rem !important;
+  }
+}

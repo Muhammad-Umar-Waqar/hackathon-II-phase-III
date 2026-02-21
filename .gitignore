@@ -1,0 +1,375 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+.ENV/
+.env*
+!.env.example
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+.nyc_output/
+coverage-final.json
+junit.xml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+lib-cov/
+instrumented/
+
+# Distribution / packaging
+.pybuild/
+.deps/
+dist/
+build/
+*.egg
+*.egg-info/
+.installed.cfg
+*.egg-info/
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.gcda
+*.gcno
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.next/
+.nuxt/
+public/
+.nyc_output/
+coverage/
+junit.xml
+*.tgz
+.nyc_output/
+coverage/
+coverage-final.json
+
+# Python specific
+*.py[cod]
+*$py.class
+*$pyc.class
+.pytest_cache/
+.coverage
+htmlcov/
+.pydevproject
+.vscode/settings.json
+.pycharm/
+*.db
+*.db-journal
+.envrc
+.env.local
+.env.dev
+.env.test
+.env.prod
+.env.backup
+.env.save
+.env.tmp
+.env.example
+.env.template
+.env.defaults
+.env.shared
+.env.secret
+.env.private
+.env.public
+.env.config
+.env.local.example
+.env.backup
+.env.save
+.env.tmp
+.env.staging
+.env.staging.local
+.env.production.local
+.env.development.local
+.env.test.local
+.env.ci
+.env.testing
+.env.testing.local
+.env.docker
+.env.docker.local
+.env.local.bak
+.env.backup
+.env.backup.*
+.env.old
+.env.old.*
+.env.save
+.env.save.*
+.env.swp
+.env.swo
+.env~
+.env~*
+.env#*
+.env##
+.env###
+
+
+# Next.js
+.next/
+out/
+dist/
+node_modules/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.next/static/chunks/framework-*.js
+.next/static/chunks/main-*.js
+.next/static/chunks/pages/_app-*.js
+.next/static/chunks/webpack-*.js
+.next/static/css/*
+.next/server/
+.next/export/
+.next/cache/
+
+# FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+.ENV/
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+*.pot
+*.py[co]
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*~
+.pytest_cache/
+.coverage
+htmlcov/
+.pydevproject
+.pycharm/
+*.db
+*.db-journal
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+coverage/
+htmlcov/
+.instance
+.pytest_cache/
+celerybeat-schedule
+celerybeat.pid
+*.sage.py
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+.settings/
+.tern-project
+.tern-port
+.directory
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+logs/
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.local
+.env.dev
+.env.test
+.env.prod
+.env.backup
+.env.save
+.env.tmp
+.env.staging
+.env.production
+.env.development
+.env.testing
+.env.docker
+.env.local.example
+.env.backup
+.env.backup.*
+.env.old
+.env.old.*
+.env.save
+.env.save.*
+.env.swp
+.env.swo
+.env~
+.env~*
+.env#*
+.env##
+.env###
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.dump
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
