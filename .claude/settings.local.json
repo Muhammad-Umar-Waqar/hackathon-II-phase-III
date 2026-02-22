@@ -54,7 +54,8 @@
       "Bash(cd D:\\\\GIAIC\\\\hackathon-2-phase-2\\\\hackathon-2-phase-2\\\\backend:*)",
       "Bash(sleep 1:*)",
       "Bash(sleep 2:*)",
-      "Bash(cd D:\\\\GIAIC\\\\hackathon-2-phase-2\\\\hackathon-2-phase-2\\\\frontend:*)"
+      "Bash(cd D:\\\\GIAIC\\\\hackathon-2-phase-2\\\\hackathon-2-phase-2\\\\frontend:*)",
+      "Bash(cd backend:*)"
     ]
   }
 }

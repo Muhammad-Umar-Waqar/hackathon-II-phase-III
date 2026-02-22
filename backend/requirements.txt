@@ -20,5 +20,8 @@ black==23.11.0
 flake8==6.1.0
 mypy==1.7.1
 slowapi==0.1.9
-openai>=1.0.0
-# mcp-sdk not available in PyPI - using OpenAI native tool format instead
+
+# AI Provider SDKs
+openai>=1.0.0              # OpenAI (fallback provider)
+google-genai>=0.2.0        # Gemini (primary provider - new SDK)
+# mcp-sdk not available in PyPI - using native tool formats instead
