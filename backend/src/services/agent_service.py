@@ -5,7 +5,7 @@ from ..utils.logger import logger, log_agent_invocation, log_agent_response, log
 
 
 class AgentService:
-    """Service for AI agent integration supporting multiple providers (Gemini, OpenAI)"""
+    """Service for AI agent integration supporting multiple providers (Gemini, OpenAI, OpenRouter)"""
 
     def __init__(self):
         self.provider = os.getenv("CHAT_PROVIDER", "gemini").lower()
@@ -32,7 +32,7 @@ class AgentService:
                 logger.error(f"Failed to initialize Gemini: {e}")
                 raise Exception(f"Gemini initialization failed: {e}")
 
-        # Skip OpenAI initialization if provider is gemini
+        # Initialize OpenAI
         if self.provider == "openai":
             openai_key = os.getenv("OPENAI_API_KEY")
             if openai_key and openai_key != "sk-your-openai-api-key-here" and openai_key.startswith("sk-"):
@@ -45,6 +45,25 @@ class AgentService:
                 except Exception as e:
                     logger.error(f"Failed to initialize OpenAI: {e}")
                     raise Exception(f"OpenAI initialization failed: {e}")
+
+        # Initialize OpenRouter (OpenAI-compatible API)
+        if self.provider == "openrouter":
+            openrouter_key = os.getenv("OPEN_ROUTER_API_KEY")
+            if openrouter_key and openrouter_key.startswith("sk-or-"):
+                try:
+                    from openai import OpenAI
+                    self.openai_client = OpenAI(
+                        api_key=openrouter_key,
+                        base_url="https://openrouter.ai/api/v1"
+                    )
+                    self.openai_model = os.getenv("OPEN_ROUTER_MODEL", "arcee-ai/trinity-large-preview:free")
+                    self.openai_max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", "1000"))
+                    logger.info(f"OpenRouter client initialized successfully with model: {self.openai_model}")
+                except Exception as e:
+                    logger.error(f"Failed to initialize OpenRouter: {e}")
+                    raise Exception(f"OpenRouter initialization failed: {e}")
+            else:
+                raise Exception("OpenRouter API key not found or invalid. Check OPEN_ROUTER_API_KEY in .env")
 
         # System prompt for the todo assistant
         self.system_prompt = """You are a helpful todo assistant. You help users manage their tasks through natural language.
@@ -278,8 +297,12 @@ Be friendly, concise, and helpful."""
                 if not self.openai_client:
                     raise Exception("OpenAI client not initialized. Check OPENAI_API_KEY in .env")
                 return self._process_with_openai(user_message, conversation_history, conversation_id, user_id)
+            elif self.provider == "openrouter":
+                if not self.openai_client:
+                    raise Exception("OpenRouter client not initialized. Check OPEN_ROUTER_API_KEY in .env")
+                return self._process_with_openai(user_message, conversation_history, conversation_id, user_id)
             else:
-                raise Exception(f"Invalid CHAT_PROVIDER: {self.provider}. Must be 'gemini' or 'openai'")
+                raise Exception(f"Invalid CHAT_PROVIDER: {self.provider}. Must be 'gemini', 'openai', or 'openrouter'")
 
         except Exception as e:
             if conversation_id and user_id:
