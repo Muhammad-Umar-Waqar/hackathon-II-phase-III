@@ -55,3 +55,21 @@ def log_security_event(event: str, details: dict = None):
     """Log security-related events"""
     details_str = f" - {details}" if details else ""
     logger.warning(f"Security Event: {event}{details_str}")
+
+def log_agent_invocation(conversation_id: str, user_id: str, message: str):
+    """Log AI agent invocations"""
+    logger.info(f"Agent Invocation: conversation_id={conversation_id}, user_id={user_id}, message_length={len(message)}")
+
+def log_agent_response(conversation_id: str, user_id: str, response: str, tool_calls: list = None):
+    """Log AI agent responses"""
+    tool_count = len(tool_calls) if tool_calls else 0
+    logger.info(f"Agent Response: conversation_id={conversation_id}, user_id={user_id}, response_length={len(response)}, tool_calls={tool_count}")
+
+def log_tool_call(conversation_id: str, tool_name: str, parameters: dict):
+    """Log tool call suggestions from agent"""
+    logger.info(f"Tool Call Suggested: conversation_id={conversation_id}, tool={tool_name}, params={parameters}")
+
+def log_agent_error(conversation_id: str, user_id: str, error: Exception):
+    """Log agent-specific errors"""
+    logger.error(f"Agent Error: conversation_id={conversation_id}, user_id={user_id}, error={str(error)}", exc_info=True)
+

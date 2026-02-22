@@ -66,12 +66,18 @@ const HomePage = () => {
             <div className="mb-2 sm:mb-0">
               <h1 className="text-xl font-semibold text-gray-900">Todo App</h1>
             </div>
-            <div className="flex items-center justify-between w-full sm:w-auto">
+            <div className="flex items-center justify-between w-full sm:w-auto gap-2">
               <span className="text-sm text-gray-700 hidden md:inline">Welcome, {user.name || user.email}</span>
               <span className="text-sm text-gray-700 sm:hidden truncate max-w-[120px]">Hi, {user.name || user.email}</span>
               <button
+                onClick={() => router.push('/chat')}
+                className="text-sm bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-md transition-colors"
+              >
+                💬 AI Chat
+              </button>
+              <button
                 onClick={handleLogout}
-                className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-md transition-colors ml-2"
+                className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-md transition-colors"
               >
                 Logout
               </button>
