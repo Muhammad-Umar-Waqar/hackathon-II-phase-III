@@ -91,10 +91,11 @@ async def log_requests(request: Request, call_next):
     return response
 
 # Import and include routers
-from src.api import auth_router, task_router
+from src.api import auth_router, task_router, chat_router
 
 app.include_router(auth_router.router, prefix="/api/v1/auth", tags=["authentication"])
 app.include_router(task_router.router, prefix="/api/v1/tasks", tags=["tasks"])
+app.include_router(chat_router.router, prefix="/api/v1", tags=["chat"])
 
 @app.get("/")
 @limiter.limit("100/minute")
